@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
@@ -8,8 +8,7 @@ import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 
-
-import TextField from '@material-ui/core/TextField';
+import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,35 +43,79 @@ function getStepContent(step) {
   }
 }
 
-function getInputContent(step) {
+
+
+export default function VerticalLinearStepper() {
+  const [receiver, setreceiver] = useState("");
+  const [message, setmessage] = useState("");
+  const [sender, setsender] = useState("");
+
+  const [receiverSet, setreceiverSet] = useState(0);
+
+  const classes = useStyles();
+  const [activeStep, setActiveStep] = useState(0);
+  const steps = getSteps();
+
+  const handleNext = () => {
+    const initials = /\w[.]\w/g;
+
+      if (receiver.match(initials)
+      && receiver.length ===3 
+      && receiver!==""
+      && (receiverSet!==2 || (sender.match(initials)&& sender.length ===3 )) ) 
+      {
+        setreceiverSet(receiverSet+1)
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+      }
+      else alert("You Need to input initials")
+    
+  };
+
+  const handleBack = () => {
+    
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    setreceiverSet(receiverSet-1)
+  };
+
+  const handleReset = () => {
+
+    setActiveStep(0);
+    setreceiverSet(receiverSet-receiverSet)
+  };
+
+  const handleInputChange1 = (e) => {
+      setreceiver(e.target.value)
+  };
+  const handleInputChange2 = (e) => {
+    setmessage(e.target.value)
+  };
+  const handleInputChange3 = (e) => {
+    setsender(e.target.value)
+  };
+
+  function getInputContent(step) {
     switch (step) {
       case 0:
-        return <TextField id="outlined-basic" label="Receiver" variant="outlined" />;
+        return (
+          <TextField
+            id="outlined-basic"
+            label="Receiver"
+            variant="outlined"
+            onChange={handleInputChange1}
+          />
+        );
       case 1:
-        return <TextField id="outlined-basic" label="Message" variant="outlined" />;
+        return (
+          <textarea className="form_inputBox" id="outlined-basic" label="Message" variant="outlined"  onChange={handleInputChange2}/>
+        );
       case 2:
-        return <TextField id="outlined-basic" label="Sender" variant="outlined" />;
+        return (
+          <TextField id="outlined-basic" label="Sender" variant="outlined" onChange={handleInputChange3}/>
+        );
       default:
         return "Something is wrong sorry";
     }
   }
-
-export default function VerticalLinearStepper() {
-  const classes = useStyles();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const steps = getSteps();
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
-  };
 
   return (
     <div className={classes.root}>
@@ -84,9 +127,9 @@ export default function VerticalLinearStepper() {
               <Typography>{getStepContent(index)}</Typography>
               <div className={classes.actionsContainer}>
                 <div>
-                    <div className="formInputContainer">
+                  <div className="formInputContainer">
                     {getInputContent(index)}
-                    </div>
+                  </div>
                   <Button
                     disabled={activeStep === 0}
                     onClick={handleBack}
