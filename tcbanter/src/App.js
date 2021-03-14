@@ -19,7 +19,17 @@ function App() {
           :<Trinfess />
         }
         
+
+        <div className="footer">
+          <p className="footerNote">This website is a parody and has nothing to do with Trinity College Dublin</p>
+          <p className="footerNote">This site was built by a Trinity Student for Trinity students</p>
+          <p className="footerNote">The site owner doesn't take responsibility for what others write</p>
+        </div>
+
       </div>
+
+        
+
     </div>
   );
 }

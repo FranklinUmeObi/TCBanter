@@ -1,5 +1,5 @@
 .trinder{
-    height: 90vh;
+    /* height: 90vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,4 +17,25 @@
 
 .header_introText{
     font-size: 24px;
+}
+
+
+
+.header_formContainer{
+    max-width: 500px;
+    margin: 20px;
+}
+
+
+.MuiPaper-root{
+    border-radius: 30px !important;
+}
+
+.formInputContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }

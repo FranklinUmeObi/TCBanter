@@ -16,3 +16,16 @@
   background: linear-gradient(to bottom, #2657eb, #de6161); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   
 }
+
+
+.footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: black;
+  font-size: small;
+}

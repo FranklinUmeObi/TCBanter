@@ -1,5 +1,6 @@
 import React from "react";
 import "./Trinder.css";
+import Form from "./Form"
 function Trinder() {
   return (
     <div className="trinder">
@@ -10,7 +11,9 @@ function Trinder() {
           you to the new and improved version, now with a website!
         </p>
       </div>
-      <div className="header_"></div>
+      <div className="header_formContainer">
+        <Form/> 
+      </div>
       <div className="header_"></div>
     </div>
   );
