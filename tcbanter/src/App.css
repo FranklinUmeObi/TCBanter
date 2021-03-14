@@ -4,8 +4,15 @@
   font-family: 'Nunito', sans-serif;
 }
 
-.bgColour{
+.bgRed{
   background: #FF416C; 
-    background: -webkit-linear-gradient(to bottom, #FF4B2B, #FF416C);
-    background: linear-gradient(to bottom, #FF4B2B, #FF416C); 
+  background: -webkit-linear-gradient(to bottom, #FF4B2B, #FF416C);
+  background: linear-gradient(to bottom, #FF4B2B, #FF416C); 
+}
+
+.bgBlue{
+  background: #de6161;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #2657eb, #de6161);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #2657eb, #de6161); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
