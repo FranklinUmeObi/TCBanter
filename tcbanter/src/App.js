@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./Components/Header";
 import Wave from "./Components/Wave";
 import Trinder from "./Components/Trinder/Trinder";
+import Trinfess from "./Components/Trinfess/Trinfess";
 import {useState} from "react";
 
 function App() {
@@ -9,10 +10,15 @@ function App() {
   return (
     <div className="App">
       <div className={pageRed ? 'bgRed' : 'bgBlue'}>
-        <Header />
+        <Header changePage={setpageRed}/>
         <Wave />
         
-        <Trinder />
+        {
+          pageRed
+          ?<Trinder />
+          :<Trinfess />
+        }
+        
       </div>
     </div>
   );
