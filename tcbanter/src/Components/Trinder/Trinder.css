@@ -1,3 +1,4 @@
+
 .trinder {
   /* height: 90vh; */
   display: flex;
@@ -27,7 +28,7 @@
 
 .MuiPaper-root {
   border-radius: 30px !important;
-  background-color: rgba(255, 255, 255, 0.35) !important;
+  background-color: rgba(255, 255, 255, 0.45) !important;
   backdrop-filter: blur(5px) !important;
   border: 1px solid rgba(255, 255, 255, 0.28) !important;
 }
@@ -48,4 +49,8 @@
     border-radius: 5px;
     background: transparent;
     padding: 10px;
+}
+
+.CarouselContainer{
+  margin-top: 60px;
 }

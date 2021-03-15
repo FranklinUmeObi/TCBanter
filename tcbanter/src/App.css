@@ -19,13 +19,15 @@
 
 
 .footer{
+  height: 200px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: column;
   margin-top: 100px;
   padding-top: 20px;
   padding-bottom: 20px;
   color: black;
   font-size: small;
+  text-align: center;
 }

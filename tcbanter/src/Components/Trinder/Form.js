@@ -68,6 +68,16 @@ export default function VerticalLinearStepper() {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
       }
       else alert("You Need to input initials")
+
+
+
+      if(receiverSet === 2) {
+        let a = "To: " + receiver.toUpperCase() + "\n"
+        let b = message + "\n"
+        let c = "From:" + sender.toUpperCase() + "\n"
+        alert(a+b+c)
+      }
+      
     
   };
 
@@ -159,6 +169,7 @@ export default function VerticalLinearStepper() {
           </Button>
         </Paper>
       )}
+
     </div>
   );
 }
