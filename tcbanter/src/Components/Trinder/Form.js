@@ -66,17 +66,19 @@ export default function VerticalLinearStepper() {
       {
         setreceiverSet(receiverSet+1)
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
+
+        if(receiverSet === 2) {
+          let a = "To: " + receiver.toUpperCase() + "\n"
+          let b = message + "\n"
+          let c = "From:" + sender.toUpperCase() + "\n"
+          alert(a+b+c)
+        }
       }
       else alert("You Need to input initials")
 
+      
 
-
-      if(receiverSet === 2) {
-        let a = "To: " + receiver.toUpperCase() + "\n"
-        let b = message + "\n"
-        let c = "From:" + sender.toUpperCase() + "\n"
-        alert(a+b+c)
-      }
+      
       
     
   };
