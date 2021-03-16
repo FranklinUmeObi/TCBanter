@@ -7,7 +7,7 @@ import Fade from "react-reveal/Flip";
 
 function Trinder() {
   return (
-    <div className="trinder">
+    <div className="trinder" id="test12">
       <Fade top cascade>
         <div className="header_intro">
           <h1 className="header_introHeader">Welcome to Tringles!</h1>
